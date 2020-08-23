@@ -11,7 +11,7 @@ It contains 5 APIs that have the following features-
 4. POST - cloneFile - creates the file data of the file name that is specified if that file exisits in the 'files' directory
 5. DELETE - file - deletes the fileName specified if it exists in the 'files' directory 
 
-* Local Swagger URL : http://localhost:8080/swagger-ui.html
+* Default Local Swagger URL : http://localhost:8080/swagger-ui.html
 
 * Hosted server Swagger URL : http://ec2-100-25-17-100.compute-1.amazonaws.com:8080/swagger-ui.html 
 (Application can be tested with the url too :) )
