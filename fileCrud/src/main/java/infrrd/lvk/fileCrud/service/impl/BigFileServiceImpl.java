@@ -20,11 +20,17 @@ import org.springframework.web.multipart.MultipartFile;
 import infrrd.lvk.fileCrud.exception.FileCRUDException;
 import infrrd.lvk.fileCrud.service.BigFileService;
 
+/*
+ * Service class for all file operations
+ */
 @Service
 public class BigFileServiceImpl implements BigFileService {
 
 	public static String FILE_DIR = "./files/";
 
+	/*
+	 * Saves file to ./files dir
+	 */
 	public String saveFileToDrive(MultipartFile file) throws IOException, FileCRUDException {
 		String fileName = file.getOriginalFilename();
 		File fileObject = new File(FILE_DIR + fileName);
@@ -41,6 +47,9 @@ public class BigFileServiceImpl implements BigFileService {
 		}
 	}
 
+	/*
+	 * Deletes file forom ./files dir
+	 */
 	public String deleteFileFromDrive(String fileName) {
 		File fileObject = new File(FILE_DIR + fileName);
 		if (fileObject.delete()) {
@@ -51,11 +60,17 @@ public class BigFileServiceImpl implements BigFileService {
 		}
 	}
 
+	/*
+	 * Writes file data to output stream
+	 */
 	public void writeFileStream(byte[] fileByteArray, FileOutputStream outputStream) throws IOException {
 		outputStream.write(fileByteArray);
 		outputStream.close();
 	}
 
+	/*
+	 * Method gets byte array of file in ./files dir
+	 */
 	public byte[] getFileByteArray(String fileName) {
 		Path path = Paths.get(FILE_DIR + fileName);
 
@@ -70,6 +85,9 @@ public class BigFileServiceImpl implements BigFileService {
 		}
 	}
 
+	/*
+	 * Gets a list of all fileNames in ./files dir
+	 */
 	public List<String> getAllFiles() {
 		List<String> results = new ArrayList<String>();
 		File[] files = new File(FILE_DIR).listFiles();
@@ -83,6 +101,10 @@ public class BigFileServiceImpl implements BigFileService {
 		return results;
 	}
 
+	/*
+	 * Method copies byte[] of fileName specified and creates another with filename
+	 * suffixed with _random 3 digit number
+	 */
 	public String cloneFileToDrive(String fileName) throws FileNotFoundException, IOException {
 		File fileObject = new File(FILE_DIR + fileName);
 		if (fileObject.exists()) {

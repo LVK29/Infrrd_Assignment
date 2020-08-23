@@ -16,4 +16,4 @@ It contains 5 APIs that have the following features-
 * Hosted server Swagger URL : http://ec2-100-25-17-100.compute-1.amazonaws.com:8080/swagger-ui.html 
 (Application can be tested with the url too :) )
 
-NOTE : The term 'big file' is very definative for size, I have kept the file limit to 100MB, if there needs to compy for larger files please update the same properties in the application.properties file
+NOTE : The term 'big file' is not very definative for size, I have kept the file limit to 100MB, if there needs to compy for larger files please update the same properties in the application.properties file
