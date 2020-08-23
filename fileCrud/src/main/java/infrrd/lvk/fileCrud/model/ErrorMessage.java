@@ -4,6 +4,9 @@ import java.time.ZonedDateTime;
 
 import org.springframework.http.HttpStatus;
 
+/*
+ * Custom error msg attributes
+ */
 public class ErrorMessage {
 	private final String message;
 	private final HttpStatus httpStatus;

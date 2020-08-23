@@ -25,6 +25,9 @@ import org.springframework.web.multipart.MultipartFile;
 import infrrd.lvk.fileCrud.service.impl.BigFileServiceImpl;
 import io.swagger.annotations.ApiOperation;
 
+/*
+ * Controller file for all the file CRUD opertions
+ */
 @RestController
 public class BigFileController {
 
